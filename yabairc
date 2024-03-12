@@ -69,6 +69,6 @@ yabai -m rule --add app=Alacritty opacity=0.97
 #  ╭──────────────────────────────────────────────────────────╮
 #  │ ここに書いたアプリはyabaiによって管理されない            │
 #  ╰──────────────────────────────────────────────────────────╯
-yabai -m rule --add app="^(Finder|Raycast|Fig|システム設定|Simulator|LINE|Cyberduck|Spotify)$" manage=off
+yabai -m rule --add app="^(Finder|Raycast|Fig|システム設定|Simulator|LINE|Cyberduck|Spotify|カレンダー)$" manage=off
 
 echo "yabai configuration loaded.."
