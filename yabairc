@@ -9,6 +9,8 @@
 
 # https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
 # macOSのセキュリティ設定で、ターミナルにフルディスクアクセスを許可する必要がある
+# 以下のコマンドを実行
+# echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
@@ -54,18 +56,18 @@ yabai -m config                                 \
     # normal_window_opacity        0.80           \
 
 # Alacrittyのみ透過
-yabai -m rule --add app=Alacritty opacity=1.0
+yabai -m rule --add app=Alacritty opacity=0.95
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                      space settings                      │
-#  │                   うまく動いたらつかう                   │
 #  ╰──────────────────────────────────────────────────────────╯
-# yabai -m rule --add app="Alacritty" space=1
-# yabai -m rule --add app="Firefox Developer Edition" space=2
-# yabai -m rule --add app="Slack" space=3
+yabai -m rule --add app="Arc" space=1
 
-# yabai -m rule --add app!="^(Google Chrome|Google Chrome Canary|Safari|Firefox|Figma|Logseq|Alacritty|Sidekick|Code|WezTerm|Friendly Streaming|Firefox Developer Edition|Slack)$" manage=off
- 
+yabai -m rule --add app="Alacritty" space=2
+yabai -m rule --add app="Google Chrome Canary" space=2
+
+yabai -m rule --add app="Slack" space=3
+
 #  ╭──────────────────────────────────────────────────────────╮
 #  │ ここに書いたアプリはyabaiによって管理されない            │
 #  ╰──────────────────────────────────────────────────────────╯
