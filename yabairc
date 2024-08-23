@@ -50,33 +50,34 @@ yabai -m config                                 \
 
 # opacity settings
 yabai -m config                                 \
-    window_opacity               on             \
+    window_opacity               off             \
     window_opacity_duration      0.11            \
-    active_window_opacity        1.0            \
-    # normal_window_opacity        0.80           \
+    # active_window_opacity        0.95            \
+    # normal_window_opacity        0.70           \
 
 # Alacrittyのみ透過
-yabai -m rule --add app=Alacritty opacity=0.95
+# yabai -m rule --add app="Alacritty" opacity=0.85
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                      space settings                      │
 #  ╰──────────────────────────────────────────────────────────╯
-yabai -m rule --add app="Arc" space=1
+# yabai -m rule --add app="Arc" space=1
+# yabai -m rule --add app='^Arc$' title='^Space.*$' manage=off
 
-yabai -m rule --add app="Alacritty" space=2
-yabai -m rule --add app="Google Chrome Canary" space=2
-
-yabai -m rule --add app="Slack" space=3
-yabai -m rule --add app="Discord" space=3
-
-yabai -m rule --add app="ChatGPT" space=4
-
-yabai -m rule --add app="Notion" space=5
-yabai -m rule --add app="Notion Calendar" space=5
+# yabai -m rule --add app="Alacritty" space=2
+# yabai -m rule --add app="Google Chrome Canary" space=2
+#
+# yabai -m rule --add app="Slack" space=3
+# yabai -m rule --add app="Discord" space=3
+#
+# yabai -m rule --add app="ChatGPT" space=4
+#
+# yabai -m rule --add app="Notion" space=5
+# yabai -m rule --add app="Notion Calendar" space=5
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │ ここに書いたアプリはyabaiによって管理されない            │
 #  ╰──────────────────────────────────────────────────────────╯
-yabai -m rule --add app="^(Finder|Raycast|Fig|システム設定|Simulator|LINE|Cyberduck|Spotify|カレンダー)$" manage=off
+yabai -m rule --add app="^(Finder|Raycast|Fig|システム設定|Simulator|LINE|Cyberduck|Spotify|カレンダー|Google Chrome Canary)$" manage=off
 
 echo "yabai configuration loaded.."
